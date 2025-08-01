@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python IDE for Schools</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Monaco Editor -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.45.0/min/vs/loader.min.js"></script>
+    <!-- Pyodide -->
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <h1 class="app-title">🐍 Python IDE for Schools</h1>
+            </div>
+            <div class="header-right">
+                <div class="control-group">
+                    <button id="fontDecrease" class="btn btn--sm" aria-label="Decrease font size">A-</button>
+                    <button id="fontIncrease" class="btn btn--sm" aria-label="Increase font size">A+</button>
+                </div>
+                <button id="themeToggle" class="btn btn--secondary" aria-label="Toggle theme">
+                    🌙
+                </button>
+                <button id="runButton" class="btn btn--primary">
+                    ▶️ Run
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Code Editor Section -->
+            <section class="editor-section">
+                <div class="section-header">
+                    <h2>Code Editor</h2>
+                    <div class="status-indicator">
+                        <span id="editorStatus" class="status status--info">Ready</span>
+                    </div>
+                </div>
+                <div id="editor" class="editor-container"></div>
+            </section>
+
+            <!-- Output Console Section -->
+            <section class="console-section">
+                <div class="section-header">
+                    <h2>Output Console</h2>
+                    <button id="clearConsole" class="btn btn--sm btn--outline">Clear</button>
+                </div>
+                <div id="console" class="console-container">
+                    <div class="console-welcome">
+                        Welcome to Python IDE for Schools! 🎓<br>
+                        Click "Run" to execute your Python code.<br>
+                        <br>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Loading Overlay -->
+        <div id="loadingOverlay" class="loading-overlay">
+            <div class="loading-content">
+                <div class="loading-spinner"></div>
+                <p>Initializing Python environment...</p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Made for students learning Python 🚀 | Powered by <a href="https://pyodide.org" target="_blank">Pyodide</a></p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
